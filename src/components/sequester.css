@@ -1,0 +1,50 @@
+.trade
+{
+    /* border: 2px black solid; */
+    padding: 15px;
+    border-radius: 10px;
+    /* background: #d7e8db; */
+    text-align: left;
+}
+
+.formLbl
+{
+    font-size: 18px;
+    margin-right: 13px;    
+}
+
+h4
+{
+    margin-bottom: 20px !important;
+    color: #60d660 !important;
+}
+
+span
+{
+    padding: 5px;
+}
+
+.infoToken
+{   
+    
+    /* background-color: rgb(175, 226, 186); */
+    text-align: center;
+    /* padding: 21px; */
+    margin-bottom: 25px;
+}
+
+.card-body
+{
+    padding:40px !important;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #60d660 !important;
+    border-color: #60d660 !important;
+}
+
+.gTxt
+{    
+    color: #60d660 !important;
+}
