@@ -8,7 +8,6 @@ import './sequester.css';
 import InputGroup from 'react-bootstrap/InputGroup';
 import User from '../abis/User.json';
 const Web3 = require('web3');
-
 //some useful constants
 const tokenToAUD = 400; //random value
 const tokenToCarbon = 100; //assuming as tons (1 ton of carbon being 1 unit of carbon)
@@ -37,28 +36,20 @@ export default class Sequester extends Component{
     async componentDidMount(){
         await this.loadWeb3();
         await this.loadBlockchainData();
-        await this.loadContract();
     }
     async loadWeb3(){
-        if(window.web3)
-        window.web3 = new Web3(
-            new Web3.providers.HttpProvider('HTTP://127.0.0.1:7543')
-        );
+        let web3;
+        if(window.ethereum){
+            web3 = new Web3(window.ethereum);
+            await window.ethereum.enable();
+        }
+        else if(window.web3)
+            web3 = new Web3(window.web3.currentProvider);
+        this.setState({web3});
     }
         
-    async loadContract(){
-        const web3 = window.web3;
-        const networkId = await web3.eth.net.getId();
-        const network = User.networks[networkId];
-        if(network){
-            console.log(networkId);
-        }
-        else{
-            window.alert("Could not detect contract.");
-        }
-    }
     async loadBlockchainData(){
-        const web3 = window.web3;
+        const web3 = this.state.web3;
         const accounts = await web3.eth.getAccounts();
         this.setState({
             accounts: accounts
@@ -78,6 +69,7 @@ export default class Sequester extends Component{
         }
     }
     state = {
+        web3: {},
         accounts: [],
         user: null,
         name: '',

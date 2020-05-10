@@ -23,32 +23,41 @@ export default class Mediator extends Component{
         this.calculateTokens = this.calculateTokens.bind(this);
     }
     async loadWeb3(){
-        if(window.web3)
-        window.web3 = new Web3(
-            new Web3.providers.HttpProvider('HTTP://127.0.0.1:7543')
-        );
+        let web3;
+        if(window.ethereum){
+            web3 = new Web3(window.ethereum);
+            await window.ethereum.enable();
+        }
+        else if(window.web3)
+            web3 = new Web3(window.web3.currentProvider);
+        this.setState({web3});
     }
-        
-    async loadContract(){
-        const web3 = window.web3;
-        const networkId = await web3.eth.net.getId();
-        const network = User.networks[networkId];
-        if(network){
-            console.log(networkId);
-        }
-        else{
-            window.alert("Could not detect contract.");
-        }
-        }
+    
     async loadBlockchainData(){
-        const web3 = window.web3;
+        const web3 = this.state.web3;
         const accounts = await web3.eth.getAccounts();
         this.setState({
             accounts: accounts
         });
+        const networkId = await web3.eth.net.getId();
+        const network = User.networks[networkId];
+        if(network){
+            console.log(networkId);
+            const user = new web3.eth.Contract(User.abi, network.address);
+            this.setState({ user });
+            const name = await this.state.user.methods.name().call();
+            this.setState({ name });
+            console.log(user)
+        }
+        else{
+            window.alert("Could not detect contract.");
+        }
     }
     state = {
-
+        web3: {},
+        accounts: [],
+        user: null,
+        name: '',
     }
     allUsers = {
 
@@ -64,7 +73,6 @@ export default class Mediator extends Component{
         //this.getUserData(userid);
         await this.loadWeb3();
         await this.loadBlockchainData();
-        await this.loadContract();
     }
     render(){
         return (

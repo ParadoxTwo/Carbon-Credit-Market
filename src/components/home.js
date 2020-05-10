@@ -3,16 +3,34 @@ import { Jumbotron, Container, Row, Col, Image, Button, Card } from 'react-boots
 import { Link } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 import './home.css';
+import axios from 'axios';
+const Web3 = require('web3');
+
 
 
 export default class Home extends Component{
     constructor(props){
         super(props);
-        this.deploySequester = this.deploySequester.bind(this);
+        this.deployContract = this.deployContract.bind(this);
     }
-    deploySequester(){
+    deployContract(){
         alert("Deploying...");
+        axios({
+            method: 'get',
+            url: 'http://localhost:5000/',
+            data: {
+                shield: "Yo"
+            }
+        })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+        //call node js
     }
+
     render(){
         return (
             <div>               
@@ -117,7 +135,7 @@ export default class Home extends Component{
                                 <Card.Text>
                                 Carbon tenement owners, responsible for sinking carbon using different techniques to remove the carbon pollution from the atmosphere. 
                                 </Card.Text>
-                                <Button onClick={()=>this.deploySequester()}>Deploy</Button>                 
+                                <Button onClick={()=>{this.deployContract()}}>Deploy</Button>                 
                             </Card.Body>
                         </Card>
                     </Col>
