@@ -3,7 +3,7 @@
 To get started you will need to run these commands in your terminal.
 New to Git? [Learn the basic Git commands](http://docs.atlassian.com/bitbucketserver/docs-061/Basic+Git+commands?utm_campaign=in-app-help&amp;utm_medium=in-app-help&amp;utm_source=stash)
 
-  
+  THis is Amit's branch
 ### Configure Git for the first time
 
     git config --global user.name "Your Name"
