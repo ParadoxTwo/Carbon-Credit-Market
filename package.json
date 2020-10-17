@@ -1,14 +1,23 @@
 {
+  "private": true,
   "name": "carbon-market",
   "version": "0.1.0",
   "description": "A Carbon Marketplace",
   "author": "Carbon Tenements",
-  "proxy":"http://localhost:5000/",
+  "proxy": "http://localhost:5000/",
   "dependencies": {
-    "@openzeppelin/contracts": "^3.0.1",
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.0",
+    "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "bootstrap": "^4.5.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.5",
+    "jquery": "^3.5.1",
+    "video-react": "^0.14.1",
+    "@openzeppelin/contracts": "^3.0.1",
     "axios": "^0.19.2",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
@@ -16,16 +25,15 @@
     "babel-preset-stage-2": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.26.0",
-    "bootstrap": "^4.3.1",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "chai-bignumber": "^3.0.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
     "fs": "0.0.1-security",
-    "react": "^16.8.4",
     "react-bootstrap": "^1.0.0-beta.6",
-    "react-dom": "^16.8.4",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "^2.1.3",
     "solc": "^0.6.7",
     "truffle": "^5.1.24",
     "truffle-hdwallet-provider": "^1.0.17",
@@ -40,13 +48,16 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "directories": {
-    "lib": "/node_modules"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

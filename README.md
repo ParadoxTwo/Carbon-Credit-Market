@@ -1,36 +1,68 @@
-## You have an empty repository
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-To get started you will need to run these commands in your terminal.
-New to Git? [Learn the basic Git commands](http://docs.atlassian.com/bitbucketserver/docs-061/Basic+Git+commands?utm_campaign=in-app-help&amp;utm_medium=in-app-help&amp;utm_source=stash)
+## Available Scripts
 
-TEST
-### Configure Git for the first time
+In the project directory, you can run:
 
-    git config --global user.name "Your Name"
-    git config --global user.email "yourusername@deakin.edu.au"
+### `npm start`
 
-	
-### Working with your repository
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-#### **How do I obtain a Repository Git URL ?**
-  
-  
-#### Browse to the Repository browse page location that you wish to clone/fork from the server
-[https://bitbucket-students.deakin.edu.au](https://bitbucket-students.deakin.edu.au)
+### `npm test`
 
-Ensure you have entered the repository page browser and then: hover, find and click on the &#39;Clone&#39; button from the repository left menu.
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-This should show you the full URL of the repository which you can use.
+### `npm run build`
 
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-#### **I just want to clone a repository**
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-If you want to simply clone a repository then visit the repo page, find and copy the repository&#39;s git URL. The git URL should end with .git
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-You can then use a git terminal to type
-git clone &quot;Insert-your-git-url-here&quot;
+### `npm run eject`
 
-  
-    **Example only:** git clone https://bitbucket-students.deakin.edu.au/scm/test/testing.git
-    
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+
+### Analyzing the Bundle Size
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+
+### Making a Progressive Web App
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+
+### Advanced Configuration
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+
+### Deployment
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+### `npm run build` fails to minify
+
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

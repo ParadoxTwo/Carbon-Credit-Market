@@ -1,32 +1,14 @@
-
-
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from './components/home';
-import Sequester from './components/sequester';
-import Mediator from './components/mediator';
-import Consumer from './components/consumer';
-import NavbarMenu from './components/navbar';
-import Footer from './components/footer';
-
-
-
-class App extends Component{
-  render(){
-    return(
-      <Router>
-        <div>
-          <NavbarMenu/>
-          <Route exact path="/" component={Home}/>
-          <Route path="/sequester" component={Sequester}/>
-          <Route path="/mediator" component={Mediator}/>
-          <Route path="/consumer" component={Consumer}/>
-        </div>
-        <Footer/>
-      </Router>
-    )
-  }
+// import { Link } from 'react-router-dom'
+import HomePage from './HomePage/HomePage';
+function App() {
+  return (
+    <div className="App ">
+      <HomePage></HomePage>
+      {/* <Link to="/consumer"><button type="button" class="btn btn-primary btn-lg">Consumer Page</button></Link>
+        <Link to="/sequester"><button type="button" class="btn btn-secondary btn-lg">Sequester Page</button></Link> */}
+    </div>
+  );
 }
-
 export default App;
